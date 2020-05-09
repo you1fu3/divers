@@ -3,6 +3,7 @@
 @section('content')
     @if (Auth::check())
         {{ Auth::user()->name }}ログイン中
+        @include('strengths.index')
     @else
         <div class="center jumbotron">
             <div class="text-center">

@@ -33,6 +33,6 @@ class User_strengthsController extends Controller
             ]);
         }
         
-        return view('welcome');
+        return redirect('/');
     }
 }

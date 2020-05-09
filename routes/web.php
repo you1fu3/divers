@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'StrengthsController@index');
 
 //ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -26,5 +24,9 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('signup2', 'User_strengthsController@showStrengthForm')->name('signup2.get');
     Route::post('signup2', 'User_strengthsController@store')->name('signup2.post');
+    
+    Route::get('strengths/{id}', 'StrengthsController@show')->name('strengths.get');
+    Route::post('strengths', 'StrengthsController@store')->name('strengths.post');
+    
 });
 

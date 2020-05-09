@@ -31,4 +31,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(User_strengths::class);
     }
+    public function user_posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
