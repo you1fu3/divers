@@ -37,19 +37,19 @@ class StrengthsController extends Controller
             'posts' => $posts,
             'id' => $id,
         ];
-        
         return view('strengths.show', $data);
     }
     
     public function store(Request $request) {
-        
         $this->validate($request, [
             'title' => 'required|max:191',
             'content' => 'required',
             'strength_id' => 'required',
         ]);
+        $user_id = $request->user();
         
         $request->user()->user_posts()->create([
+            'user_id' => $user_id->id,
             'title' => $request->title,
             'content' => $request->content,
             'strength_id' => $request->strength_id,

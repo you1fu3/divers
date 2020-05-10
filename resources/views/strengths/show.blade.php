@@ -15,7 +15,7 @@
 	</h4>
 	<p>{{ $post->content }}</p>
 	
-	<button type="button" class="btn btn-info">続きをみる</button>
+	{!! link_to_route('comments.show', '続きをみる', ['id' => $post->id],['class' => 'btn btn-info']) !!}
 	<hr />
 
     @endforeach

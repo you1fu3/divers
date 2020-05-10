@@ -28,5 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('strengths/{id}', 'StrengthsController@show')->name('strengths.get');
     Route::post('strengths', 'StrengthsController@store')->name('strengths.post');
     
+    Route::get('comments/{id}', 'CommentsController@show')->name('comments.show');
+    Route::post('comments', 'CommentsController@store')->name('comments.post');
+        
 });
 

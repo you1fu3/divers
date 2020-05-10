@@ -17,4 +17,9 @@ class Post extends Model
     {
         return $this->belongsTo(Strength::class);
     }
+    
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
